@@ -1,0 +1,5 @@
+# Dev overrides for rating
+# Example:
+# backend:
+#   image:
+#     tag: "<immutable-tag>"

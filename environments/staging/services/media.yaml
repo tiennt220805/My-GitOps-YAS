@@ -1,0 +1,4 @@
+# Staging overrides for media
+# backend:
+#   image:
+#     tag: "<release-tag>"

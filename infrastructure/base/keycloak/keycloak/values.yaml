@@ -1,0 +1,14 @@
+global:
+  domain: ""
+
+hostname: ""
+backofficeRedirectUrl: ""
+storefrontRedirectUrl: ""
+postgresql:
+  host: ""
+  username: yasadminuser
+  password: admin
+
+bootstrapAdmin:
+  username: admin
+  password: admin

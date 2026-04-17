@@ -1,0 +1,5 @@
+# Dev overrides for media
+# Example:
+# backend:
+#   image:
+#     tag: "<immutable-tag>"

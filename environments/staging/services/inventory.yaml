@@ -1,0 +1,4 @@
+# Staging overrides for inventory
+# backend:
+#   image:
+#     tag: "<release-tag>"

@@ -1,0 +1,4 @@
+# Staging overrides for rating
+# backend:
+#   image:
+#     tag: "<release-tag>"

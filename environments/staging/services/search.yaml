@@ -1,0 +1,4 @@
+# Staging overrides for search
+# backend:
+#   image:
+#     tag: "<release-tag>"
