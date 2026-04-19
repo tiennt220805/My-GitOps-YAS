@@ -13,17 +13,17 @@ spec:
       tables: {}
   teamId: "acid"
   postgresql:
-    version: {{ .Values.postgresqlVersion | quote }}
+    version: {{ .Values.postgresql.postgresqlVersion }}
     parameters:
-      max_connections: {{ .Values.maxConnections | quote }}
+      max_connections: {{ .Values.postgresql.maxConnections }}
       wal_level: logical
       max_replication_slots: "20"
       max_wal_senders: "20"
-  numberOfInstances: {{ .Values.replicas }}
+  numberOfInstances: {{ .Values.replicas.postgresql }}
   volume:
-    size: {{ .Values.volumeSize }}
+    size: {{ .Values.postgresql.volumeSize }}
   users:
-    {{ .Values.username }}:
+    {{ .Values.postgresql.username }}:
       - superuser
       - inherit
       - login
@@ -31,21 +31,21 @@ spec:
       - createdb
       - replication
   databases:
-    cart: {{ .Values.username }}
-    customer: {{ .Values.username }}
-    inventory: {{ .Values.username }}
-    keycloak: {{ .Values.username }}
-    location: {{ .Values.username }}
-    media: {{ .Values.username }}
-    order: {{ .Values.username }}
-    payment: {{ .Values.username }}
-    product: {{ .Values.username }}
-    promotion: {{ .Values.username }}
-    rating: {{ .Values.username }}
-    tax: {{ .Values.username }}
-    recommendation: {{ .Values.username }}
-    webhook: {{ .Values.username }}
-    grafana: {{ .Values.username }}
+    cart: {{ .Values.postgresql.username }}
+    customer: {{ .Values.postgresql.username }}
+    inventory: {{ .Values.postgresql.username }}
+    keycloak: {{ .Values.postgresql.username }}
+    location: {{ .Values.postgresql.username }}
+    media: {{ .Values.postgresql.username }}
+    order: {{ .Values.postgresql.username }}
+    payment: {{ .Values.postgresql.username }}
+    product: {{ .Values.postgresql.username }}
+    promotion: {{ .Values.postgresql.username }}
+    rating: {{ .Values.postgresql.username }}
+    tax: {{ .Values.postgresql.username }}
+    recommendation: {{ .Values.postgresql.username }}
+    webhook: {{ .Values.postgresql.username }}
+    grafana: {{ .Values.postgresql.username }}
   patroni:
     slots:
       eventuate_slot_cart:
@@ -94,5 +94,4 @@ spec:
         plugin: wal2json
   allowedSourceRanges:
   # IP ranges to access your cluster go here
-  resources:
-    {{ toYaml .Values.resources | nindent 4 }}
+  resources: {{- toYaml (.Values.resources | default dict) | nindent 4}}

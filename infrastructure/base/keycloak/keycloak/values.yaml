@@ -1,14 +1,15 @@
 global:
   domain: ""
 
-hostname: ""
-backofficeRedirectUrl: ""
-storefrontRedirectUrl: ""
+keycloak:
+  hostname: ""
+  backofficeRedirectUrl: ""
+  storefrontRedirectUrl: ""
+  bootstrapAdmin:
+    username: admin
+    password: admin
+
 postgresql:
   host: ""
   username: yasadminuser
-  password: admin
-
-bootstrapAdmin:
-  username: admin
   password: admin

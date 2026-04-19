@@ -14,14 +14,19 @@ spec:
     passwordSecret:
       name: postgresql-credentials
       key: password
-    host: {{ default (printf "postgresql.%s" .Release.Namespace) .Values.postgresql.host }}
+    host:
+      {
+        {
+          default (printf "postgresql.%s" .Release.Namespace) .Values.postgresql.host,
+        },
+      }
     database: keycloak
     port: 5432
   http:
     httpEnabled: true
     httpPort: 80
   hostname:
-    hostname: http://{{ default (printf "identity.%s" .Values.global.domain) .Values.hostname }}
+    hostname: http://{{ default (printf "identity.%s" .Values.global.domain) .Values.keycloak.hostname }}
     backchannelDynamic: true
     strict: false
   proxy:

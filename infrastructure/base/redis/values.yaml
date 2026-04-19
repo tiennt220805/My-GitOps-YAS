@@ -2,4 +2,4 @@ redis:
   architecture: standalone
   auth:
     enabled: true
-    password: redis
+    password: ""

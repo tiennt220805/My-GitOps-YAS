@@ -1,5 +1,7 @@
 elasticsearch:
   replicas: 1
+  username: yas
+  password: changeme
 kibana:
   ingress:
     className: nginx

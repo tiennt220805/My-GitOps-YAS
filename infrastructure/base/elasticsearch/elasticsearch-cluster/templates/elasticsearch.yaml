@@ -13,6 +13,6 @@ spec:
       - secretName: user-credentials-secret
   nodeSets:
     - name: node
-      count: {{ .Values.elasticsearch.replicas }}
+      count: {{ .Values.replicas.elasticsearch }}
       config:
         node.store.allow_mmap: false

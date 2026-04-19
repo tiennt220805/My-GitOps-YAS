@@ -526,7 +526,7 @@ spec:
         clientAuthenticatorType: client-secret
         secret: TVacLC0cQ8tiiEKiTVerTb2YvwQ1TRJF
         redirectUris:
-          - {{ default (printf "http://backoffice.%s" .Values.global.domain) .Values.backofficeRedirectUrl }}/*
+          - {{ default (printf "http://backoffice.%s" .Values.global.domain) .Values.keycloak.backofficeRedirectUrl }}/*
           - http://localhost:3000/*
           - http://localhost:8087/*
         webOrigins: [ ]
@@ -820,7 +820,7 @@ spec:
         clientAuthenticatorType: client-secret
         secret: ZrU9I0q2uXBglBnmvyJdkl1lf0ncr8tn
         redirectUris:
-          - {{ default (printf "http://storefront.%s" .Values.global.domain) .Values.storefrontRedirectUrl }}/*
+          - {{ default (printf "http://storefront.%s" .Values.global.domain) .Values.keycloak.storefrontRedirectUrl }}/*
           - http://localhost:8087/*
         webOrigins: [ ]
         notBefore: 0
