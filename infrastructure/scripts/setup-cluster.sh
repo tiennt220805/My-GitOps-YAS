@@ -15,7 +15,8 @@ helm upgrade --install postgres-operator postgres-operator-charts/postgres-opera
 
 echo "Installing Kafka Operator (Strimzi)..."
 helm upgrade --install kafka-operator strimzi/strimzi-kafka-operator \
- --create-namespace --namespace kafka-operator
+ --create-namespace --namespace kafka-operator \
+ --set watchAnyNamespace=true
 
 echo "Installing Elasticsearch Operator (ECK)..."
 helm upgrade --install elastic-operator elastic/eck-operator \
