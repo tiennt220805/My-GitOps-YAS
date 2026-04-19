@@ -14,8 +14,8 @@ postgresql:
   username: yasadminuser
   password: admin
   volumeSize: 1Gi
-  postgresqlVersion: 15
-  maxConnections: 100
+  postgresqlVersion: "15"
+  maxConnections: "100"
 
 kafka:
   zookeeperStoreSize: 5Gi
