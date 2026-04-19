@@ -33,8 +33,9 @@ elasticsearch:
   password: LarUmB3A49NTg9YmgW4=
 
 redis:
-  password: redis
+  architecture: standalone
   auth:
+    enabled: true
     password: redis
 
 keycloak:
