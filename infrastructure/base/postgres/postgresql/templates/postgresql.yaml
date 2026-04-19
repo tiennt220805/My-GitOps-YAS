@@ -13,9 +13,9 @@ spec:
       tables: {}
   teamId: "acid"
   postgresql:
-    version: {{ .Values.postgresql.postgresqlVersion }}
+    version: {{ .Values.postgresql.postgresqlVersion | quote }}
     parameters:
-      max_connections: {{ .Values.postgresql.maxConnections }}
+      max_connections: {{ .Values.postgresql.maxConnections | quote }}
       wal_level: logical
       max_replication_slots: "20"
       max_wal_senders: "20"
