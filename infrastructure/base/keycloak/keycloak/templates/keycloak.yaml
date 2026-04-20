@@ -43,6 +43,6 @@ spec:
                 mountPath: /opt/keycloak/providers
             resources:
               requests:
-                memory: "128Mi"
+                memory: "512Mi"
               limits:
                 memory: "1Gi"

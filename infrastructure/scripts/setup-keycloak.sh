@@ -19,7 +19,7 @@ kubectl apply -f https://raw.githubusercontent.com/keycloak/keycloak-k8s-resourc
 kubectl apply -f https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/26.0.2/kubernetes/keycloakrealmimports.k8s.keycloak.org-v1.yml
 
 curl -s https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/26.0.2/kubernetes/kubernetes.yml | \
-sed 's/namespace: default/namespace: keycloak-operator/g' | \
+sed -E 's/namespace: [\"'\'']?default[\"'\'']?/namespace: keycloak-operator/g' | \
 kubectl apply -f -
 
 echo "--- Applying RBAC for Keycloak Operator ---"
