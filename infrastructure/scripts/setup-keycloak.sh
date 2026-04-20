@@ -9,11 +9,3 @@ kubectl apply -f https://raw.githubusercontent.com/keycloak/keycloak-k8s-resourc
 
 echo "--- Applying RBAC for Keycloak Operator ---"
 kubectl apply -f ../base/keycloak/keycloak/role-binding.yaml
-
-echo "--- Deploying Keycloak Instance ---"
-sleep 20
-
-helm upgrade --install keycloak ../base/keycloak/keycloak \
-  --namespace keycloak --create-namespace \
-  -f ../../environments/test/values-shared.yaml \
-  -f ./cluster-config.yaml
