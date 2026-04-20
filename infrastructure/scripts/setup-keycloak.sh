@@ -10,7 +10,7 @@ kubectl apply -f https://raw.githubusercontent.com/keycloak/keycloak-k8s-resourc
 echo "--- Deploying Keycloak Instance ---"
 sleep 30
 
-helm upgrade --install keycloak ./keycloak/keycloak \
+helm upgrade --install keycloak ../base/keycloak/keycloak \
   --namespace keycloak --create-namespace \
   -f ../../environments/test/values-shared.yaml \
   -f ./cluster-config.yaml
