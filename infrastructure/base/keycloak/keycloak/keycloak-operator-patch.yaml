@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak-operator
+  namespace: keycloak-operator
+spec:
+  template:
+    spec:
+      containers:
+      - name: keycloak-operator
+        env:
+        - name: WATCH_NAMESPACE
+          value: ""
+        - name: QUARKUS_OPERATOR_SDK_NAMESPACES
+          value: ""
+        - name: QUARKUS_LOG_CATEGORY__IO_JAVAOPERATORSDK__LEVEL
+          value: "DEBUG"

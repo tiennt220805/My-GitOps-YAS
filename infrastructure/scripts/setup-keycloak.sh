@@ -24,3 +24,20 @@ kubectl apply -f - -n keycloak-operator
 
 echo "--- Applying RBAC for Keycloak Operator ---"
 kubectl apply -f ../base/keycloak/keycloak/role-binding.yaml
+
+echo "--- Patching Keycloak Operator to Cluster-wide mode ---"
+
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+PATCH_FILE="$SCRIPT_DIR/../base/keycloak/keycloak/keycloak-operator-patch.yaml"
+
+if [ -f "$PATCH_FILE" ]; then
+    kubectl patch deployment keycloak-operator \
+      -n keycloak-operator \
+      --type=strategic \
+      --patch-file "$PATCH_FILE"
+    
+    echo "Patch applied successfully."
+else
+    echo "Error: File patch not found at $PATCH_FILE"
+    exit 1
+fi

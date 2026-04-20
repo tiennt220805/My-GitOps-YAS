@@ -40,7 +40,7 @@ spec:
           - name: keycloak
             volumeMounts:
               - name: yas-themes
-                mountPath: /opt/keycloak/providers
+                mountPath: /opt/keycloak/themes
             resources:
               requests:
                 memory: "512Mi"
