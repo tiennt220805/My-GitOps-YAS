@@ -17,6 +17,7 @@ helm upgrade --install postgres-operator postgres-operator-charts/postgres-opera
 
 echo "Installing Kafka Operator (Strimzi)..."
 helm upgrade --install kafka-operator strimzi/strimzi-kafka-operator \
+ --version 0.45.0 \
  --create-namespace --namespace kafka-operator \
  --set watchAnyNamespace=true
 
