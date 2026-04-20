@@ -6,7 +6,9 @@ set -x
 helm repo add postgres-operator-charts https://opensource.zalando.com/postgres-operator/charts/postgres-operator
 helm repo add strimzi https://strimzi.io/charts/
 helm repo add elastic https://helm.elastic.co
-helm repo update
+
+echo "Updating Helm Repos..."
+helm repo update || true
 
 # 2. Cài đặt các Operators (Cluster-level)
 echo "Installing Postgres Operator..."
