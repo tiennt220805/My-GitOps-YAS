@@ -14,3 +14,6 @@ helm upgrade --install keycloak ../base/keycloak/keycloak \
   --namespace keycloak --create-namespace \
   -f ../../environments/test/values-shared.yaml \
   -f ./cluster-config.yaml
+
+echo "--- Applying RBAC for Keycloak Operator ---"
+kubectl apply -f ../base/keycloak/keycloak/templates/role-binding.yaml
