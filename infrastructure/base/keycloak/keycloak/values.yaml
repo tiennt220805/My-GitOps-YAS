@@ -2,7 +2,7 @@ global:
   domain: ""
 
 keycloak:
-  hostname: ""
+  hostname: identity.yas.test.com
   backofficeRedirectUrl: ""
   storefrontRedirectUrl: ""
   bootstrapAdmin:
