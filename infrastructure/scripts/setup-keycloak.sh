@@ -22,6 +22,11 @@ curl -s https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/26.0.2
 sed 's/namespace: default/namespace: keycloak-operator/g' | \
 kubectl apply -f - -n keycloak-operator
 
+# Get secret from acid.zalan.do and create secret in postgresql-credentials
+kubectl get secret yasadminuser.postgresql.credentials.postgresql.acid.zalan.do -n test-anonymous-cart -o yaml | \
+sed 's/name: yasadminuser.postgresql.credentials.postgresql.acid.zalan.do/name: postgresql-credentials/g' | \
+kubectl apply -f -
+
 echo "--- Applying RBAC for Keycloak Operator ---"
 kubectl apply -f ../base/keycloak/keycloak/role-binding.yaml
 
