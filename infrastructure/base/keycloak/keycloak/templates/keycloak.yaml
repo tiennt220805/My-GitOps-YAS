@@ -21,7 +21,7 @@ spec:
     httpEnabled: true
     httpPort: 80
   hostname:
-    hostname: {{ .Values.keycloak.hostname }}
+    hostname: https://{{ .Values.keycloak.hostname }}
     backchannelDynamic: true
     strict: false
   proxy:
